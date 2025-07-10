@@ -1,7 +1,7 @@
 # Adapter_HTML (HTML to JSON Web API/.NET 8)
 
 
-This project is a lightweight **.NET 8 Web API** that converts HTML content into structured JSON. It uses [HtmlAgilityPack](https://html-agility-pack.net/) to parse HTML and allows XPath filtering to extract specific parts of the HTML DOM. The API is designed with clean separation between models, settings, and service logic — ideal for microservice-based architectures.
+This project is a lightweight **.NET 8 Web API** that converts HTML content into structured JSON. It uses [HtmlAgilityPack](https://html-agility-pack.net/) to parse HTML and allows XPath filtering to extract specific parts of HTML. The API is designed with clean separation between models, settings, and service logic, which is ideal for microservice-based architectures.
 
 ---
 
@@ -34,7 +34,7 @@ Adapter\_HTML/
 1. Open the .sln file in Visual Studio 2022.
 2. Ensure that Adapter_HTML is set as the startup project.
 3. Press F5 or click the Start button (▶️) to run the application.
-4 .Once the application is running, the Swagger UI will open automatically at:
+4. Once the application is running, the Swagger UI will open automatically at:
 https://localhost:{PORT}/swagger (replace {PORT} with your actual port number).
 5. In Swagger UI, locate the /convert endpoint under the appropriate controller.
 6. Click Try it out, then Execute to send a request.
