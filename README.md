@@ -96,7 +96,3 @@ The API will respond with JSON data based on the XPath and other settings define
 I have also tested the API endpoints using Postman to verify that the JSON responses are returned correctly and formatted as expected.
 ![Postman Request and Response](README/Postman_a.png)
 
----
-## 🤝 Contributing
-
-Contributions are welcome! Feel free to fork the repository and submit a pull request with improvements, bug fixes, or ideas.
