@@ -14,9 +14,10 @@ namespace Adapter_HTML
             client = factory.CreateClient();
         }
 
+
         public async Task<IEnumerable<TagModel>> ConvertAsync()
         {
-            string url = $"{settings.BaseURL} {settings.Endpoint ?? ""}";
+            string url = $"{settings.BaseUrl}{settings.Endpoint ?? ""}";
             string html = await client.GetStringAsync(url);
 
             var doc = new HtmlDocument();
@@ -26,22 +27,24 @@ namespace Adapter_HTML
             {
                 tags = doc.DocumentNode.SelectNodes(settings.XPath) ?? Enumerable.Empty<HtmlNode>();
             }
-            else 
+            else
             {
                 tags = doc.DocumentNode.Descendants();
             }
 
             var jsonElements = tags.Where(x => !x.Name.StartsWith("#")).Select(tag => new TagModel
+            {
+                TagName = tag.Name,
+                InnerText = tag.InnerText.Trim(),
+                Attributes = tag.Attributes.Select(attr => new AttributeModel
                 {
-                    TagName = tag.Name,
-                    InnerText = tag.InnerText.Trim(),
-                    Attributes = tag.Attributes.Select(attr => new AttributeModel
-                    {
-                        Name = attr.Name,
-                        Value = attr.Value
-                    })
-                 });
+                    Name = attr.Name,
+                    Value = attr.Value
+                })
+            });
+
             return jsonElements;
         }
     }
 }
+

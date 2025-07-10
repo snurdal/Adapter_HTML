@@ -12,7 +12,7 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddHttpClient();
 
-builder.Services.Configure<HtmlAdapterSettings>(builder.Configuration.GetSection("HtmlAdapterSettings"));
+builder.Services.Configure<HtmlAdapterSettings>(builder.Configuration.GetSection("HtmlAdapter"));
 builder.Services.AddSingleton<HtmlToJsonConverter>();
 
 
@@ -45,8 +45,3 @@ app.MapGet("/convert", async (HtmlToJsonConverter converter)
 
 
 app.Run();
-
-internal record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
-{
-    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
-}
