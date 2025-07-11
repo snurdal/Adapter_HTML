@@ -40,7 +40,7 @@ https://localhost:{PORT}/swagger (replace {PORT} with your actual port number).
 6. Click Try it out, then Execute to send a request.
 The API will respond with JSON data based on the XPath and other settings defined in your appsettings.json.
 
-![API response tested on Swagger UI].(README/XPath_a.png)
+![API response tested on Swagger UI](README/XPath_a.png)
 
 ---
 
